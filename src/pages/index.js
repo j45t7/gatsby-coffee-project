@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FaGulp } from "react-icons/fa"
 import BackgroundSection from "../components/Global/BackgroundSection"
+import Info from "../components/Home/Info"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
@@ -13,9 +14,7 @@ const IndexPage = ({ data }) => (
       title="Regular Joe"
       styleClass="default-background"
     />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <FaGulp />
+    <Info />
   </Layout>
 )
 export const query = graphql`
