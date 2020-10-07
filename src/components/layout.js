@@ -5,14 +5,22 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./bootstrap.min.css"
 import "./layout.css"
+import Navbar from "./Global/Navbar"
 
-const Layout = ({ children }) => <>{children}</>
+const Layout = ({ children }) => {
+  return (
+    <>
+      <Navbar />
+      {children}
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
