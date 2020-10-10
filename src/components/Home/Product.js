@@ -13,7 +13,7 @@ export default function Product({ product }) {
             data-item-id={product.id}
             data-item-name={product.title}
             data-item-price={product.price}
-            data-item-url="https://coffee-project.netlify.com/"
+            data-item-url={"https://coffee-project.netlify.com/" + product.id}
             data-item-image={product.image.fluid.src}
           >
             add to cart
