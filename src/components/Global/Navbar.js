@@ -15,15 +15,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
 
-  // const navbarHandler = () => {
-  //   isOpen
-  //     ? setIsOpen({ false, css: "collapse navbar-collapse" })
-  //     : setState(prevState => ({
-  //         navbarOpen: true,
-  //         css: "collapse navbar-collapse show",
-  //       }))
-  // }
-
   return (
     <nav className="navbar navbar-expand-sm bg-light navbar-light">
       <Link to="/" className="navbar-brand">
@@ -48,7 +39,7 @@ export default function Navbar() {
             )
           })}
           <li className="nav-item ml-sm-5">
-            <FaCartArrowDown className="cart-icon" />
+            <FaCartArrowDown className="cart-icon snipcart-checkout" />
           </li>
         </ul>
       </div>
