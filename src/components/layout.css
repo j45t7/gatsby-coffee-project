@@ -40,6 +40,7 @@ h6 {
   background: linear-gradient(rgba(255, 158, 9, 0.5), rgba(255, 158, 9, 0.5));
   background-position: center;
   background-size: cover;
+  opacity: 1 !important;
 }
 
 .about-background {
@@ -58,4 +59,8 @@ h6 {
 
 .footer {
   background-color: var(--mainBrown);
+}
+
+.menu {
+  background: var(--mainGrey);
 }

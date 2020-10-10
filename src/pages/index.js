@@ -6,23 +6,47 @@ import SEO from "../components/seo"
 import { FaGulp } from "react-icons/fa"
 import BackgroundSection from "../components/Global/BackgroundSection"
 import Info from "../components/Home/Info"
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <BackgroundSection
-      img={data.img.childImageSharp.fluid}
-      title="Regular Joe"
-      styleClass="default-background"
-    />
-    <Info />
-  </Layout>
-)
+import Menu from "../components/Home/Menu"
+
+const IndexPage = ({ data }) => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <BackgroundSection
+        img={data.img.childImageSharp.fluid}
+        title="Regular Joe"
+        styleClass="default-background"
+      />
+      <Info />
+      <Menu items={data.menu} />
+    </Layout>
+  )
+}
+
 export const query = graphql`
   {
     img: file(relativePath: { eq: "default-background.jpeg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    menu: allContentfulCoffeeItem {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          price
+          category
+          image {
+            fixed(width: 50, height: 50) {
+              ...GatsbyContentfulFixed_tracedSVG
+            }
+          }
         }
       }
     }
